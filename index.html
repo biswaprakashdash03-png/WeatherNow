@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f7fb" />
+  <title>WeatherNow | India Weather Dashboard</title>
+  <link rel="icon" type="image/png" href="weather-icon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a href="#" class="brand">
+        <span class="brand-icon">☀</span>
+        <span>Weather<span class="brand-highlight">Now</span></span>
+      </a>
+
+      <form class="search-box" id="searchForm">
+        <span>⌕</span>
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Search any Indian city..."
+          aria-label="Search Indian city"
+          list="indiaCities"
+          autocomplete="off"
+          required
+        />
+        <datalist id="indiaCities"></datalist>
+        <button type="submit">Search</button>
+      </form>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+    </header>
+
+    <div class="location-line">
+      <div>
+        <p class="eyebrow">INDIA WEATHER DASHBOARD</p>
+        <h1>Weather Overview</h1>
+      </div>
+      <button id="locationButton" class="location-button">◎ My location</button>
+    </div>
+
+    <p id="message" class="message" role="status">Loading weather...</p>
+
+    <section class="dashboard">
+      <article class="card current-card">
+        <div class="current-top">
+          <div>
+            <p class="muted">CURRENT WEATHER</p>
+            <h2 id="cityName">Bhubaneswar</h2>
+            <p id="currentDate" class="muted">Today</p>
+          </div>
+          <span id="weatherIcon" class="weather-icon">⛅</span>
+        </div>
+
+        <div class="temperature-row">
+          <div>
+            <div class="temperature"><span id="temperature">--</span><span class="degree">°</span></div>
+            <p id="weatherDescription" class="weather-description">Loading...</p>
+          </div>
+          <div class="high-low">
+            <p>H: <strong id="highTemp">--°</strong></p>
+            <p>L: <strong id="lowTemp">--°</strong></p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <p class="feels-label">Feels like <strong id="feelsLike">--°</strong></p>
+      </article>
+
+      <article class="card detail-card">
+        <div class="section-heading">
+          <div>
+            <p class="muted">WEATHER DETAILS</p>
+            <h3>Today's conditions</h3>
+          </div>
+          <span class="heading-icon">◉</span>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric">
+            <span class="metric-icon">💧</span>
+            <p class="muted">Humidity</p>
+            <strong id="humidity">--%</strong>
+            <span class="metric-note">Relative humidity</span>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">🌬️</span>
+            <p class="muted">Wind speed</p>
+            <strong id="windSpeed">-- km/h</strong>
+            <span class="metric-note">Current wind</span>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">☀️</span>
+            <p class="muted">UV index</p>
+            <strong id="uvIndex">--</strong>
+            <span class="metric-note">Sun intensity</span>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">👁️</span>
+            <p class="muted">Visibility</p>
+            <strong id="visibility">-- km</strong>
+            <span class="metric-note">Viewing distance</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card forecast-card">
+      <div class="section-heading">
+        <div>
+          <p class="muted">PLAN AHEAD</p>
+          <h3>5-Day Forecast</h3>
+        </div>
+        <span class="forecast-badge">Next 5 days</span>
+      </div>
+      <div id="forecast" class="forecast-list">
+        <p class="muted">Loading forecast...</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Made with <span>♥</span> by WeatherNow</p>
+      <p>Weather data by Open-Meteo</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
